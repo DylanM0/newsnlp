@@ -1,0 +1,9 @@
+requests
+BeautifulSoup
+matplotlib
+Kkma
+Okt
+wordcloud
+nltk
+streamlit
+koreanize-matplotlib
