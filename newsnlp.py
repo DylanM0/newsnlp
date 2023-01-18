@@ -6,6 +6,7 @@ from konlpy.tag import Okt
 from wordcloud import WordCloud
 import nltk
 import streamlit as st
+import koreanize_matplotlib
 
 def main():
     st.header('최대 7일 이내의 뉴스 키워드를 찾을 수 있습니다')
