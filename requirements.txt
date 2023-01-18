@@ -1,8 +1,7 @@
 requests
 BeautifulSoup
 matplotlib
-Kkma
-Okt
+konlpy
 wordcloud
 nltk
 streamlit
