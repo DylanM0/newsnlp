@@ -29,7 +29,7 @@ st.header('연습용 형태소 분석기입니다 ')
 
 corpus = st.text_input('한글입력', '당신의 이름은 무엇입니까?')
 
-for kor in cleaned_corpus:
+for kor in corpus:
     corpus.append(ko_preprocess_sentence(kor))
     
 
