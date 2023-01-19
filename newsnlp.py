@@ -4,10 +4,16 @@ from wordcloud import WordCloud
 import streamlit as st
 import koreanize_matplotlib
 
+$ python3 -m mecab dict-index --userdic nouns.dic nouns.csv
+
+
 st.header('연습용 형태소 분석기입니다 ')
 corpus = st.text_input('한글입력', '당신의 이름은 무엇입니까?')
 
-mecab = MeCab()
+mecab = MeCab(user_dictionary_path="nouns.dic")
+mecab.dictionary
+
+'mecab = MeCab()
 
 me1 = mecab.morphs(corpus)
 me2 = mecab.nouns(corpus)
