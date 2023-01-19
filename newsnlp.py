@@ -8,7 +8,7 @@ import nltk
 import streamlit as st
 import koreanize_matplotlib
 
-def main():
+
     st.header('최대 7일 이내의 뉴스 키워드를 찾을 수 있습니다')
     date = st.text_input('키워드를 보고싶은 일자를 입력해주세요. ex)20210324')
     news_url = 'https://news.naver.com/main/ranking/popularDay.nhn?date={}'.format(date)
