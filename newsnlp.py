@@ -2,10 +2,12 @@ import requests
 import matplotlib.pyplot as plt
 from konlpy.tag import Kkma
 from konlpy.tag import Okt
-from eunjeon import Mecab
+from konlpy.tag import Mecab
 from wordcloud import WordCloud
 import streamlit as st
 import koreanize_matplotlib
+
+mecab = Mecab()
 
 def ko_preprocess_sentence(sentence, s_token=False, e_token=False):
     sentence = re.sub(r"([?.!,])", r" \1 ", sentence)
