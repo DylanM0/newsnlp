@@ -1,8 +1,8 @@
 requests
-BeautifulSoup4
 matplotlib
 konlpy
 wordcloud
 nltk
 streamlit
 koreanize-matplotlib
+eunjeon
