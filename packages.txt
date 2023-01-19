@@ -1,0 +1,1 @@
+mecab dict-index --userdic nouns.dic nouns.csv
