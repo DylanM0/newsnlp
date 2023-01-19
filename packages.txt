@@ -1,1 +1,2 @@
-mecab dict-index --userdic nouns.dic nouns.csv
+$ python3 -m mecab dict-index --userdic nouns.dic nouns.csv
+
