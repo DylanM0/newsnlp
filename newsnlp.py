@@ -4,6 +4,7 @@ from mecab import MeCab
 from wordcloud import WordCloud
 import streamlit as st
 import koreanize_matplotlib
+import re
 
 
 mecab = MeCab()
