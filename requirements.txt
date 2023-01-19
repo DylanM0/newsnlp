@@ -6,3 +6,4 @@ nltk
 streamlit
 koreanize-matplotlib
 python-mecab-ko
+re
