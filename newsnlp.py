@@ -1,4 +1,3 @@
-import requests
 import matplotlib.pyplot as plt
 from mecab import MeCab
 from wordcloud import WordCloud
