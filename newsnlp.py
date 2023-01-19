@@ -14,9 +14,13 @@ me2 = mecab.nouns(corpus)
 me3 = mecab.pos(corpus)
 
 
-
+st.subheader('형태소분석_1')
 st.table(me1)
+
+st.subheader('형태소_명사추출')
 st.table(me2)
+
+st.subheader('형태소분석_2(품사포함)')
 st.table(me3)
 
 
