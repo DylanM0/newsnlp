@@ -1,8 +1,6 @@
-requests
 matplotlib
 konlpy
 wordcloud
-nltk
 streamlit
 koreanize-matplotlib
 python-mecab-ko
