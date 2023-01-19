@@ -1,12 +1,15 @@
 import requests
 import matplotlib.pyplot as plt
 from konlpy.tag import Kkma
-from konlpy.tag import Okt
+from konlpy.tag import Mecab
 from wordcloud import WordCloud
 import streamlit as st
 import koreanize_matplotlib
 
-okt = Okt()
+!git clone https://github.com/SOMJANG/Mecab-ko-for-Google-Colab.git
+!bash install_mecab-ko_on_colab190912.sh
+
+mecab = Mecab()
 
 def ko_preprocess_sentence(sentence, s_token=False, e_token=False):
     sentence = re.sub(r"([?.!,])", r" \1 ", sentence)
@@ -14,7 +17,7 @@ def ko_preprocess_sentence(sentence, s_token=False, e_token=False):
     sentence = re.sub(r"[^가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z?.!,]+", " ", sentence)
 
     sentence = sentence.strip()
-    sentence = okt.morphs(sentence)
+    sentence = mecab.morphs(sentence)
 
     if s_token:
         sentence = '<start> ' + sentence
