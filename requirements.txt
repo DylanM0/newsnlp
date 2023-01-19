@@ -5,4 +5,3 @@ wordcloud
 nltk
 streamlit
 koreanize-matplotlib
-eunjeon
