@@ -4,7 +4,6 @@ from wordcloud import WordCloud
 import streamlit as st
 import koreanize_matplotlib
 
-$ python3 -m mecab dict-index --userdic nouns.dic nouns.csv
 
 
 st.header('연습용 형태소 분석기입니다 ')
