@@ -4,6 +4,8 @@ from wordcloud import WordCloud
 import streamlit as st
 import koreanize_matplotlib
 import seaborn as sns
+import numpy as np
+import pandas as pd
 
 
 
