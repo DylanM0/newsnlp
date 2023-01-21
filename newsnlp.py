@@ -60,8 +60,7 @@ if uploaded_file:
 
     
     for num in 명사카운트['세특1']:
-        여기 = print(num, end= ",")
-    
+        여기 = ','.join(num)    
     
     
     nouns = mecab.nouns(여기)
