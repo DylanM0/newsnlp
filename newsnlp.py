@@ -28,6 +28,17 @@ def listToString(str_list):
         result += s + " "
     return result.strip()
 
+def dequote(s):
+    """
+    If a string has single or double quotes around it, remove them.
+    Make sure the pair of quotes match.
+    If a matching pair of quotes is not found, return the string unchanged.
+    """
+    if (s[0] == s[-1]) and s.startswith(("'", '"')):
+        return s[1:-1]
+    return s
+
+
 
 
 st.header('연습용 형태소 분석기입니다 ')
@@ -87,7 +98,7 @@ if uploaded_file:
     
     키워드=[]
     for i in 명사카운트['명사']:
-        tag_list = 명사카운트['명사'][i][2:-2].split("', '")
+        tag_list = 명사카운트['명사'][i].split("', '")
         for tag in tag_list:
             키워드.append(tag)
 
