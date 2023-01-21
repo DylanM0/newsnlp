@@ -54,7 +54,8 @@ st.table(me3)
 uploaded_file = st.file_uploader('Choose a XLSX file', type='xlsx')
 if uploaded_file:
     st.markdown('---')
-    df1 = pd.read_excel(uploaded_file, engine='openpyxl')
+    global df
+    df = pd.read_excel(uploaded_file, engine='openpyxl')
     st.dataframe(df)
     
     qwe = []
@@ -67,7 +68,7 @@ if uploaded_file:
     
     generate_excel_download_link(df)
     
-    global(df)
+    
 
  
 
