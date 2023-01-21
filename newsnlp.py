@@ -130,6 +130,25 @@ if uploaded_file:
 
     st.pyplot(fig)
     
+        
+    ddr = dict(count.most_common(100))
+    
+    
+    wc = WordCloud(font_path=font,\
+        background_color="white", \
+        width=1000, \
+        height=1000, \
+        max_words=30, \
+        max_font_size=300).generate_from_frequencies(ddr)
+
+    
+
+    plt.figure(figsize = (17,17))
+    plt.imshow(wc)
+    plt.axis('off')
+    plt.show()
+    st.pyplot(wc)
+    
     
     
 #     fig = px.bar(data =fenxi, x=counts, y=tags, color='Profit', template='plotly_white', title=f'<b>Sales & Profit by {choice_column}</b>')
