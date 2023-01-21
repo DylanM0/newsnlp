@@ -140,8 +140,8 @@ if uploaded_file:
     
     
     wc = WordCloud(font_path = font_path, background_color="white",
-                   width=1000, height=1000, 
-                   max_words=50, max_font_size=300).generate_from_frequencies(ddr)
+                   width=1000, height=600, 
+                   max_words=80, max_font_size=300).generate_from_frequencies(ddr)
 
     
 
