@@ -133,6 +133,8 @@ if uploaded_file:
         
     ddr = dict(count.most_common(100))
     
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    
     
     wc = WordCloud(background_color="white",
                    width=1000, height=1000, 
