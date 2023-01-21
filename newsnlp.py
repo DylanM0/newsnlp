@@ -87,15 +87,15 @@ if uploaded_file:
     
     
     fig = plt.figure(figsize=(10,20))
-    plt.bar(tags, counts)
-#     plt.xticks(x, tags)
+    plt.bar(fenxi.tags, fenxi.counts)
+    plt.xticks(x, tags)
     
 
 #     fig = plt.figure(figsize = (10,20))
 #     haohao = sns.barplot(x='counts',y='tags', data=fenxi)
 
-    fig.savefig(haohao)
-    st.pyplot(haohao)
+    box1 = fig.savefig(haohao)
+    st.pyplot(box1)
     
     
     
