@@ -77,6 +77,15 @@ if uploaded_file:
     top = count.most_common(20)
     st.table(top)
     
+    x = np.arange(len(top))
+    keys = [x[0] for x in top] 
+    values = [x[1] for x in top] 
+    hao = plt.figure(figsize=(12,6))
+    plt.bar(x, values)
+    plt.xticks(x, keys)
+    hao.savgfig("hao.png")
+    st.pyplot(hao)
+    
     
     
     
