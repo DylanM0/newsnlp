@@ -3,6 +3,7 @@ from mecab import MeCab
 from wordcloud import WordCloud
 import streamlit as st
 import koreanize_matplotlib
+import seaborn as sns
 
 
 def generate_excel_download_link(df):
@@ -42,6 +43,36 @@ if uploaded_file:
     st.markdown('---')
     df = pd.read_excel(uploaded_file, engine='openpyxl')
     st.dataframe(df)
+    
+    qwe = []
+    for i in stqdm(df['세특1'].index):
+        nouns = mecab.nouns(df['세특1'][i])
+        nouns = [n for n in nouns if len(n) > 1]
+        qwe.append(nouns)
+    
+    df['명사'] = qwe
+    
+    
+    
+    명사카운트 = df[df['모집단위'] =='12영어영문학과']
+
+    키워드 =[]
+    for tags in 명사카운트['명사']:
+        tag_list = tags[2:-2].split("', '")
+        for tag in tag_list:
+            키워드.append(tag)
+
+    from collections import Counter
+    count1 = Counter(키워드)
+    
+    
+    fenxi = pd.DataFrame(count1.most_common(50))
+    fenxi.columns =['tags', 'counts']
+
+    plt.figure(figsize = (10,20))
+    haohao = sns.barplot(x='counts',y='tags', data=fenxi)
+    
+    
     
     
     
