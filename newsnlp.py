@@ -7,6 +7,7 @@ import seaborn as sns
 import numpy as np
 import pandas as pd
 from stqdm import stqdm
+import plotly.express as px  # pip install plotly-express
 
 
 
@@ -84,6 +85,19 @@ if uploaded_file:
     plt.figure(figsize=(12,6))
     plt.bar(x, values)
     plt.xticks(x, keys)
+    
+    fig = px.bar(
+    x=keys,
+    y=values,
+    color='Profit',
+    template='plotly_white',
+    title=f'<b>Sales & Profit by {choice_column}</b>'
+    )
+    st.plotly_chart(fig)
+    
+    
+    
+    
     hao1 = plt.savefig(hao)
     st.pyplot(hao1)
     
