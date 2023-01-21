@@ -88,7 +88,7 @@ if uploaded_file:
     
     fig = plt.figure(figsize=(10,20))
     plt.bar(fenxi.tags, fenxi.counts)
-    plt.xticks(x, tags)
+    plt.xticks(x, fenxi.tags)
     
 
 #     fig = plt.figure(figsize = (10,20))
