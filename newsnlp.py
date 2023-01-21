@@ -62,12 +62,14 @@ if uploaded_file:
 
     명사카운트 = df[df['모집단위'] == choice_column]
     
+    명사카운트1 = 명사카운트[명사카운트['합격']=='합']
+    
 
     from collections import Counter
 
     
    
-    여기 = [i for i in 명사카운트['세특1']]
+    여기 = [i for i in 명사카운트1['세특1']]
     
     여기1 = listToString(여기)
     
