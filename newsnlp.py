@@ -76,13 +76,13 @@ if uploaded_file:
         for tag in tag_list:
             키워드.append(tag)
             
-
+    st.table(count1)
             
             
     from collections import Counter
     count1 = Counter(키워드)
     
-    st.table(count1)
+    
 
 
     fenxi = pd.DataFrame(count1.most_common(50))
