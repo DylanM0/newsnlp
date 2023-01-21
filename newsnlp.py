@@ -139,7 +139,7 @@ if uploaded_file:
     font_path = 'fonts/NanumGothicBold.ttf'
     
     
-    wc = WordCloud(font = font_path, background_color="white",
+    wc = WordCloud(font_path = font_path, background_color="white",
                    width=1000, height=1000, 
                    max_words=100, max_font_size=300).generate_from_frequencies(ddr)
 
