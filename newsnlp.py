@@ -121,19 +121,18 @@ if uploaded_file:
     st.table(fenxi)
 
 
-#     fig =  plt.figure(figsize = (10,10))
+    fig =  plt.figure(figsize = (10,10))
 
-#     sns.barplot(x='counts',y='tags', data=fenxi)
+    sns.barplot(x='counts',y='tags', data=fenxi)
 
-#     st.pyplot(fig)
+    st.pyplot(fig)
     
     
     
 #     fig = px.bar(data =fenxi, x=counts, y=tags, color='Profit', template='plotly_white', title=f'<b>Sales & Profit by {choice_column}</b>')
 
     
-    fig = px.bar(fenxi, x='tags', y='counts',color='lifeExp',height=400)
-    st.plotly_chart(fig, use_container_width=True)
+
     
     
 #     hao1 = plt.savefig(hao)
