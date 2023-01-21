@@ -53,8 +53,13 @@ if uploaded_file:
     df['명사'] = qwe
     
     
+    choice = df['모집단위'].unique()
+    choice_column = st.selectbox('선택해주세요',choice, )
     
-    명사카운트 = df[df['모집단위'] =='12영어영문학과']
+    
+    
+    
+    명사카운트 = df[df['모집단위'] == choice_column]
 
     키워드 =[]
     for tags in 명사카운트['명사']:
@@ -71,6 +76,9 @@ if uploaded_file:
 
     plt.figure(figsize = (10,20))
     haohao = sns.barplot(x='counts',y='tags', data=fenxi)
+    
+    box1 = plt.savefig(haohao)
+    st.pyplot(box1)
     
     
     
