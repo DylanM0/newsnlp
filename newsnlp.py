@@ -84,7 +84,7 @@ if uploaded_file:
     plt.figure(figsize=(12,6))
     plt.bar(x, values)
     plt.xticks(x, keys)
-    hao1 = plt.savgfig(hao)
+    hao1 = plt.savefig(hao)
     st.pyplot(hao1)
     
     
