@@ -85,11 +85,11 @@ if uploaded_file:
     fenxi = pd.DataFrame(count1.most_common(50))
     fenxi.columns =['tags', 'counts']
 
-    plt.figure(figsize = (10,20))
+    fig = plt.figure(figsize = (10,20))
     haohao = sns.barplot(x='counts',y='tags', data=fenxi)
 
     box1 = fig.savefig(haohao)
-    st.pyplot(haohao)
+    st.pyplot(box1)
     
     
     
