@@ -6,6 +6,7 @@ import koreanize_matplotlib
 import seaborn as sns
 
 
+
 def generate_excel_download_link(df):
     # Credit Excel: https://discuss.streamlit.io/t/how-to-add-a-download-excel-csv-function-to-a-button/4474/5
     towrite = BytesIO()
