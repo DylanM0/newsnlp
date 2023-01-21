@@ -52,18 +52,18 @@ st.table(me3)
 uploaded_file1 = st.file_uploader('Choose a XLSX file', type='xlsx')
 if uploaded_file1:
     st.markdown('---')
-    df = pd.read_excel(uploaded_file1, engine='openpyxl')
+    df1 = pd.read_excel(uploaded_file1, engine='openpyxl')
     st.dataframe(df1)
     
     qwe = []
-    for i in stqdm(df['세특1'].index):
-        nouns = mecab.nouns(세특1['Specials'][i])
+    for i in stqdm(df1['세특1'].index):
+        nouns = mecab.nouns(df1['세특1'][i])
         nouns = [n for n in nouns if len(n) > 1]
         qwe.append(nouns)
     
-    df['명사'] = qwe
+    df1['명사'] = qwe
     
-    generate_excel_download_link(df)
+    generate_excel_download_link(df1)
     
 
     
