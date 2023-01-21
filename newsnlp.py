@@ -75,24 +75,24 @@ if uploaded_file:
         tag_list = tags[2:-2]
         for tag in tag_list:
             키워드.append(tag)
+            
 
             
             
     from collections import Counter
     count1 = Counter(키워드)
+    
+    st.table(count1)
 
 
     fenxi = pd.DataFrame(count1.most_common(50))
     fenxi.columns =['tags', 'counts']
     
     
-    fig = plt.figure(figsize=(10,20))
-    plt.bar(fenxi.tags, fenxi.counts)
-    plt.xticks(fenxi.tags, fenxi.tags)
     
 
-#     fig = plt.figure(figsize = (10,20))
-#     haohao = sns.barplot(x='counts',y='tags', data=fenxi)
+    fig = plt.figure(figsize = (10,20))
+    haohao = sns.barplot(x='counts',y='tags', data=fenxi)
 
     box1 = fig.savefig(haohao)
     st.pyplot(box1)
