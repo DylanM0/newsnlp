@@ -72,7 +72,7 @@ if uploaded_file:
 
 
 
-    choice = df['모집단위'].unique()
+choice = df['모집단위'].unique()
     
     
 choice_column = st.selectbox('선택해주세요',choice, )
