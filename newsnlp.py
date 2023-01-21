@@ -136,7 +136,7 @@ if uploaded_file:
     st.set_option('deprecation.showPyplotGlobalUse', False)
     
     
-    font_path = "fonts/NanumGothicBold.ttf"
+    font_path = 'fonts/NanumGothicBold.ttf'
     
     
     wc = WordCloud(font = font_path, background_color="white",
