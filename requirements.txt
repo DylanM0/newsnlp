@@ -10,3 +10,4 @@ openpyxl
 pandas
 numpy
 stqdm
+plotly-express
