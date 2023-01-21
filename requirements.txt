@@ -7,3 +7,5 @@ python-mecab-ko
 seaborn
 sklearn
 openpyxl
+pandas
+numpy
