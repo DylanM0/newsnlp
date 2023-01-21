@@ -78,68 +78,47 @@ if uploaded_file:
     top = count.most_common(20)
     st.table(top)
     
-    x = np.arange(len(top))
-    keys = [x[0] for x in top] 
-    values = [x[1] for x in top] 
-    
-    plt.figure(figsize=(12,6))
-    plt.bar(x, values)
-    plt.xticks(x, keys)
-    
-    fig = px.bar(x=keys, y=values,color='Profit', template='plotly_white', title=f'<b>Sales & Profit by {choice_column}</b>')
-    st.plotly_chart(fig)
-    
-    
-    
-    
-    hao1 = plt.savefig(hao)
-    st.pyplot(hao1)
-    
-    
-    
-    
-    
-    
-    
-#     qwe = []
-#     for i in stqdm(명사카운트['세특1'].index):
-#         nouns = mecab.nouns(명사카운트['세특1'][i])
-#         nouns = [n for n in nouns if len(n) > 1]
-#         qwe.append(nouns)
-    
-#     명사카운트['명사'] = qwe
-    
-    
-        
-
-        
-
-
-#     키워드 =[]
-#     for tags in 명사카운트['명사']:
-#         tag_list = tags[2:-2].split("', '")
-#         for tag in tag_list:
-#             키워드.append(tag)
-
-
-
-#     from collections import Counter
-#     count1 = Counter(키워드)
+    fenxi = pd.DataFrame(top)
+    fenxi.columns =['tags', 'counts']
 
 
 
 
-#     fenxi = pd.DataFrame(count1.most_common(50))
-#     fenxi.columns =['tags', 'counts']
+    fig = plt.figure(figsize = (10,20))
+    haohao = sns.barplot(x='counts',y='tags', data=fenxi)
+
+    box1 = fig.savefig(haohao)
+    st.pyplot(box1)
+    
+    
+    
+#     x = np.arange(len(top))
+#     keys = [x[0] for x in top] 
+#     values = [x[1] for x in top] 
+    
+#     plt.figure(figsize=(12,6))
+#     plt.bar(x, values)
+#     plt.xticks(x, keys)
+    
+#     fig = px.bar(x=keys, y=values,color='Profit', template='plotly_white', title=f'<b>Sales & Profit by {choice_column}</b>')
+#     st.plotly_chart(fig)
+    
+    
+    
+    
+#     hao1 = plt.savefig(hao)
+#     st.pyplot(hao1)
+    
+    
+    
+    
+    
+    
+    
 
 
 
 
-#     fig = plt.figure(figsize = (10,20))
-#     haohao = sns.barplot(x='counts',y='tags', data=fenxi)
-
-#     box1 = fig.savefig(haohao)
-#     st.pyplot(box1)
     
     
     
