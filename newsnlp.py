@@ -68,7 +68,9 @@ if uploaded_file:
     
         
 
-
+    st.table(명사카운트)
+        
+        
 
     키워드 =[]
     for tags in 명사카운트['명사']:
@@ -76,8 +78,7 @@ if uploaded_file:
         for tag in tag_list:
             키워드.append(tag)
             
-    st.table(count1)
-            
+
             
     from collections import Counter
     count1 = Counter(키워드)
