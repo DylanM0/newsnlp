@@ -132,7 +132,8 @@ if uploaded_file:
 #     fig = px.bar(data =fenxi, x=counts, y=tags, color='Profit', template='plotly_white', title=f'<b>Sales & Profit by {choice_column}</b>')
 
     
-    st.bar_chart(data =fenxi, x='counts', y='tags')
+    fig = px.bar(fenxi, x='tags', y='counts',color='medal')
+    st.plotly_chart(fig, use_container_width=True)
     
     
 #     hao1 = plt.savefig(hao)
