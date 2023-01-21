@@ -49,12 +49,29 @@ st.subheader('형태소분석_2(품사포함)')
 st.table(me3)
 
 
+uploaded_file1 = st.file_uploader('Choose a XLSX file', type='xlsx')
+if uploaded_file1:
+    st.markdown('---')
+    df = pd.read_excel(uploaded_file1, engine='openpyxl')
+    st.dataframe(df1)
+    
+    qwe = []
+    for i in stqdm(df['세특1'].index):
+        nouns = mecab.nouns(세특1['Specials'][i])
+        nouns = [n for n in nouns if len(n) > 1]
+        qwe.append(nouns)
+    
+    df['명사'] = qwe
+    
+    generate_excel_download_link(df)
+    
+    
 uploaded_file = st.file_uploader('Choose a XLSX file', type='xlsx')
 if uploaded_file:
     st.markdown('---')
     df = pd.read_excel(uploaded_file, engine='openpyxl')
     st.dataframe(df)
-    
+        
     
     choice = df['모집단위'].unique()
     choice_column = st.selectbox('선택해주세요',choice, )
@@ -69,14 +86,14 @@ if uploaded_file:
 
 
 
-    여기 = [i for i in 명사카운트1['세특1']]
+    여기 = [i for i in 명사카운트1['명사']]
 
     여기1 = listToString(여기)
 
 
-    nouns = mecab.nouns(여기1)
-    nouns = stqdm([n for n in nouns if len(n) > 1])
-    count = Counter(nouns)
+#     nouns = mecab.nouns(여기1)
+#     nouns = [n for n in nouns if len(n) > 1]
+    count = Counter(여기1)
     top = count.most_common(20)
 
 
@@ -86,7 +103,7 @@ if uploaded_file:
     st.table(fenxi)
 
 
-    fig =  plt.figure(figsize = (10,20))
+    fig =  plt.figure(figsize = (10,10))
 
     sns.barplot(x='counts',y='tags', data=fenxi)
 
