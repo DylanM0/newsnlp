@@ -136,12 +136,12 @@ if uploaded_file:
     st.set_option('deprecation.showPyplotGlobalUse', False)
     
     
-    font_path = 'fonts/NanumGothicBold.ttf'
+    font_path = 'fonts/Korail_Round_Gothic_Bold.ttf'
     
     
     wc = WordCloud(font_path = font_path, background_color="white",
                    width=1000, height=1000, 
-                   max_words=100, max_font_size=300).generate_from_frequencies(ddr)
+                   max_words=50, max_font_size=300).generate_from_frequencies(ddr)
 
     
 
