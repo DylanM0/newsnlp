@@ -60,37 +60,37 @@ if uploaded_file:
     choice_column = st.selectbox('선택해주세요',choice, )
 
 
-    명사카운트 = df[df['모집단위'] == choice_column]
-    
-    명사카운트1 = 명사카운트[명사카운트['합격']=='합']
-    
+명사카운트 = df[df['모집단위'] == choice_column]
 
-    from collections import Counter
-
-    
-   
-    여기 = [i for i in 명사카운트1['세특1']]
-    
-    여기1 = listToString(여기)
-    
-    
-    nouns = mecab.nouns(여기1)
-    nouns = stqdm([n for n in nouns if len(n) > 1])
-    count = Counter(nouns)
-    top = count.most_common(20)
-    
-    
-    fenxi = pd.DataFrame(top)
-    fenxi.columns =['tags', 'counts']
-
-    st.table(fenxi)
+명사카운트1 = 명사카운트[명사카운트['합격']=='합']
 
 
-    fig =  plt.figure(figsize = (10,20))
-    
-    sns.barplot(x='counts',y='tags', data=fenxi)
+from collections import Counter
 
-    st.pyplot(fig)
+
+
+여기 = [i for i in 명사카운트1['세특1']]
+
+여기1 = listToString(여기)
+
+
+nouns = mecab.nouns(여기1)
+nouns = stqdm([n for n in nouns if len(n) > 1])
+count = Counter(nouns)
+top = count.most_common(20)
+
+
+fenxi = pd.DataFrame(top)
+fenxi.columns =['tags', 'counts']
+
+st.table(fenxi)
+
+
+fig =  plt.figure(figsize = (10,20))
+
+sns.barplot(x='counts',y='tags', data=fenxi)
+
+st.pyplot(fig)
     
     
     
