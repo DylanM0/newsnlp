@@ -19,6 +19,12 @@ def generate_excel_download_link(df):
     href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="data_download.xlsx">Download Excel File</a>'
     return st.markdown(href, unsafe_allow_html=True)
 
+def listToString(str_list):
+    result = ""
+    for s in str_list:
+        result += s + " "
+    return result.strip()
+
 
 
 st.header('연습용 형태소 분석기입니다 ')
@@ -61,10 +67,11 @@ if uploaded_file:
     
    
     여기 = [i for i in 명사카운트['세특1']]
-           
+    
+    여기1 = listToString(여기)
     
     
-    nouns = mecab.nouns(여기)
+    nouns = mecab.nouns(여기1)
     nouns = [n for n in nouns if len(n) > 1]
     count = Counter(nouns)
     top = count.most_common(20)
