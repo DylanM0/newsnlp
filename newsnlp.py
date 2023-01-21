@@ -87,8 +87,8 @@ if uploaded_file:
     
     
     fig = plt.figure(figsize=(10,20))
-    plt.bar(x, counts)
-    plt.xticks(x, tags)
+    plt.bar(tags, counts)
+#     plt.xticks(x, tags)
     
 
 #     fig = plt.figure(figsize = (10,20))
