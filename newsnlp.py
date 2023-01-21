@@ -69,33 +69,33 @@ if uploaded_file:
         
 
         
-        
-
-    키워드 =[]
-    for i in 명사카운트['명사']:
-        tag_list = 명사카운트['명사'][i][2:-2].split.(",")
-        for tag in tag_list:
-            키워드.append(tag)
-            
-
-            
-    from collections import Counter
-    count1 = Counter(키워드)
-    
-    
 
 
-    fenxi = pd.DataFrame(count1.most_common(50))
-    fenxi.columns =['tags', 'counts']
-    
-    
-    
+키워드 =[]
+for i in 명사카운트['명사']:
+    tag_list = 명사카운트['명사'][i][2:-2].split("', '")
+    for tag in tag_list:
+        키워드.append(tag)
 
-    fig = plt.figure(figsize = (10,20))
-    haohao = sns.barplot(x='counts',y='tags', data=fenxi)
 
-    box1 = fig.savefig(haohao)
-    st.pyplot(box1)
+
+from collections import Counter
+count1 = Counter(키워드)
+
+
+
+
+fenxi = pd.DataFrame(count1.most_common(50))
+fenxi.columns =['tags', 'counts']
+
+
+
+
+fig = plt.figure(figsize = (10,20))
+haohao = sns.barplot(x='counts',y='tags', data=fenxi)
+
+box1 = fig.savefig(haohao)
+st.pyplot(box1)
     
     
     
