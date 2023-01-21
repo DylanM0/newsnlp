@@ -84,31 +84,39 @@ if uploaded_file:
 
 
     from collections import Counter
+    
+    키워드 =[]
+    for tags in 명사카운트['명사']:
+        tag_list = tags[2:-2].split("', '")
+        for tag in tag_list:
+            키워드.append(tag)
+
+    count1 = Counter(키워드)
 
 
 
-    여기 = [i for i in 명사카운트['명사']]
+#     여기 = [i for i in 명사카운트['세특1']]
 
-    여기1 = listToString(여기)
-
-
-    #     nouns = mecab.nouns(여기1)
-    #     nouns = [n for n in nouns if len(n) > 1]
-    count = Counter(여기1)
-    top = count.most_common(20)
+#     여기1 = listToString(여기)
 
 
-    fenxi = pd.DataFrame(top)
-    fenxi.columns =['tags', 'counts']
+#     nouns = mecab.nouns(여기1)
+#     nouns = [n for n in nouns if len(n) > 1]
+#     count = Counter(nouns)
+#     top = count.most_common(20)
 
-    st.table(fenxi)
+
+#     fenxi = pd.DataFrame(top)
+#     fenxi.columns =['tags', 'counts']
+
+#     st.table(fenxi)
 
 
-    fig =  plt.figure(figsize = (10,10))
+#     fig =  plt.figure(figsize = (10,10))
 
-    sns.barplot(x='counts',y='tags', data=fenxi)
+#     sns.barplot(x='counts',y='tags', data=fenxi)
 
-    st.pyplot(fig)
+#     st.pyplot(fig)
     
     
     
