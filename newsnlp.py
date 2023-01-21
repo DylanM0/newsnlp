@@ -143,7 +143,6 @@ if uploaded_file:
     plt.figure(figsize = (17,17))
     plt.imshow(wc)
     plt.axis('off')
-    plt.show()
     st.pyplot(wc)
     
     
