@@ -67,7 +67,7 @@ if uploaded_file:
     
     generate_excel_download_link(df)
     
-    global df
+    global(df)
 
  
 
