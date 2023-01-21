@@ -84,9 +84,15 @@ if uploaded_file:
 
     fenxi = pd.DataFrame(count1.most_common(50))
     fenxi.columns =['tags', 'counts']
+    
+    
+    fig = plt.figure(figsize=(10,20))
+    plt.bar(x, counts)
+    plt.xticks(x, tags)
+    
 
-    fig = plt.figure(figsize = (10,20))
-    haohao = sns.barplot(x='counts',y='tags', data=fenxi)
+#     fig = plt.figure(figsize = (10,20))
+#     haohao = sns.barplot(x='counts',y='tags', data=fenxi)
 
     fig.savefig(haohao)
     st.pyplot(haohao)
