@@ -4,3 +4,5 @@ wordcloud
 streamlit
 koreanize-matplotlib
 python-mecab-ko
+seaborn
+sklearn
