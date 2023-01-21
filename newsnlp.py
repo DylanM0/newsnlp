@@ -84,11 +84,11 @@ if uploaded_file:
 
 
 
-    fig = plt.figure(figsize = (10,20))
+    plt.figure(figsize = (10,20))
     haohao = sns.barplot(x='counts',y='tags', data=fenxi)
 
-    box1 = fig.savefig(haohao)
-    st.pyplot(box1)
+    plt.savefig("hao.png")
+    st.pyplot(haohao)
     
     
     
