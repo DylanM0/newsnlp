@@ -88,12 +88,12 @@ if uploaded_file:
 
     choice_column = st.selectbox('선택해주세요',choice, )
     
-    options = st.multiselect('선택해주세요',choice1)
+    options = st.selectbox('선택해주세요',choice1)
 
 
-    명사카운트 = 합격[합격['모집단위'] == choice_column]
+    명사카운트 = 합격[(합격['모집단위'] == choice_column)&(합격['편제'] == options)]
 
-    명사카운트1 = 합격[합격['편제'] == options]
+  
 
 
 
