@@ -80,7 +80,8 @@ if uploaded_file:
     x = np.arange(len(top))
     keys = [x[0] for x in top] 
     values = [x[1] for x in top] 
-    hao = plt.figure(figsize=(12,6))
+    
+    plt.figure(figsize=(12,6))
     plt.bar(x, values)
     plt.xticks(x, keys)
     hao1 = plt.savgfig(hao)
