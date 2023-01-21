@@ -68,13 +68,12 @@ if uploaded_file:
     
         
 
-    st.table(명사카운트)
         
         
 
     키워드 =[]
-    for tags in 명사카운트['명사']:
-        tag_list = tags[2:-2]
+    for i in 명사카운트['명사']:
+        tag_list = 명사카운트['명사'][i][2:-2].split.(",")
         for tag in tag_list:
             키워드.append(tag)
             
