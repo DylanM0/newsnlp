@@ -72,7 +72,7 @@ if uploaded_file:
 
     키워드 =[]
     for tags in 명사카운트['명사']:
-        tag_list = tags[2:-2].split("', '")
+        tag_list = tags[2:-2]
         for tag in tag_list:
             키워드.append(tag)
 
