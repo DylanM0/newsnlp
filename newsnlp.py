@@ -73,7 +73,7 @@ if uploaded_file:
     
     
     nouns = mecab.nouns(여기1)
-    nouns = [n for n in nouns if len(n) > 1]
+    nouns = stqdm([n for n in nouns if len(n) > 1])
     count = Counter(nouns)
     top = count.most_common(20)
     
