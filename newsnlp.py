@@ -86,12 +86,9 @@ if uploaded_file:
     from collections import Counter
     
     키워드 =[]
-    for tags in 명사카운트['명사']:
-        tag_list = tags[2:-2].split("', '")
-        for tag in tag_list:
-            키워드.append(tag)
-
-    count1 = Counter(키워드)
+    여기요 = [i for i in 명사카운트['명사']]
+    여기요1 = listToString(여기요)
+    count1 = Counter(여기요)
 
 
 
