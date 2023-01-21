@@ -54,7 +54,7 @@ st.table(me3)
 uploaded_file = st.file_uploader('Choose a XLSX file', type='xlsx')
 if uploaded_file:
     st.markdown('---')
-    global df
+    
     df = pd.read_excel(uploaded_file, engine='openpyxl')
     st.dataframe(df)
     
@@ -69,48 +69,46 @@ if uploaded_file:
     generate_excel_download_link(df)
     
     
-
- 
-
-
-
-choice = df['모집단위'].unique()
+    합격 = df[df['합격']=='합']
     
     
-choice_column = st.selectbox('선택해주세요',choice, )
+    choice = 합격['모집단위'].unique()
 
 
-명사카운트 = df[df['모집단위'] == choice_column]
-
-명사카운트1 = 명사카운트[명사카운트['합격']=='합']
+    choice_column = st.selectbox('선택해주세요',choice, )
 
 
-from collections import Counter
+    명사카운트 = 합격[합격['모집단위'] == choice_column]
 
 
 
-여기 = [i for i in 명사카운트1['명사']]
 
-여기1 = listToString(여기)
-
-
-#     nouns = mecab.nouns(여기1)
-#     nouns = [n for n in nouns if len(n) > 1]
-count = Counter(여기1)
-top = count.most_common(20)
+    from collections import Counter
 
 
-fenxi = pd.DataFrame(top)
-fenxi.columns =['tags', 'counts']
 
-st.table(fenxi)
+    여기 = [i for i in 명사카운트['명사']]
+
+    여기1 = listToString(여기)
 
 
-fig =  plt.figure(figsize = (10,10))
+    #     nouns = mecab.nouns(여기1)
+    #     nouns = [n for n in nouns if len(n) > 1]
+    count = Counter(여기1)
+    top = count.most_common(20)
 
-sns.barplot(x='counts',y='tags', data=fenxi)
 
-st.pyplot(fig)
+    fenxi = pd.DataFrame(top)
+    fenxi.columns =['tags', 'counts']
+
+    st.table(fenxi)
+
+
+    fig =  plt.figure(figsize = (10,10))
+
+    sns.barplot(x='counts',y='tags', data=fenxi)
+
+    st.pyplot(fig)
     
     
     
