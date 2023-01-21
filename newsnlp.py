@@ -93,7 +93,7 @@ if uploaded_file:
 
     명사카운트 = 합격[합격['모집단위'] == choice_column]
 
-    명사카운트 = 합격[합격[options]]
+    명사카운트 = 합격[합격['편제'] == options]
 
 
 
