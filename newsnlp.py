@@ -55,15 +55,28 @@ if uploaded_file:
 
     명사카운트 = df[df['모집단위'] == choice_column]
     
+
+    from collections import Counter
+
+    nouns = mecab.nouns(명사카운트['명사'])
+    nouns = [n for n in nouns if len(n) > 1]
+    count = Counter(nouns)
+    top = count.most_common(20)
+    st.table(top)
     
     
-    qwe = []
-    for i in stqdm(명사카운트['세특1'].index):
-        nouns = mecab.nouns(명사카운트['세특1'][i])
-        nouns = [n for n in nouns if len(n) > 1]
-        qwe.append(nouns)
     
-    명사카운트['명사'] = qwe
+    
+    
+    
+    
+#     qwe = []
+#     for i in stqdm(명사카운트['세특1'].index):
+#         nouns = mecab.nouns(명사카운트['세특1'][i])
+#         nouns = [n for n in nouns if len(n) > 1]
+#         qwe.append(nouns)
+    
+#     명사카운트['명사'] = qwe
     
     
         
@@ -71,31 +84,31 @@ if uploaded_file:
         
 
 
-키워드 =[]
-for tags in 명사카운트['명사']:
-    tag_list = tags[2:-2].split("', '")
-    for tag in tag_list:
-        키워드.append(tag)
+#     키워드 =[]
+#     for tags in 명사카운트['명사']:
+#         tag_list = tags[2:-2].split("', '")
+#         for tag in tag_list:
+#             키워드.append(tag)
 
 
 
-from collections import Counter
-count1 = Counter(키워드)
-
-
-
-
-fenxi = pd.DataFrame(count1.most_common(50))
-fenxi.columns =['tags', 'counts']
+#     from collections import Counter
+#     count1 = Counter(키워드)
 
 
 
 
-fig = plt.figure(figsize = (10,20))
-haohao = sns.barplot(x='counts',y='tags', data=fenxi)
+#     fenxi = pd.DataFrame(count1.most_common(50))
+#     fenxi.columns =['tags', 'counts']
 
-box1 = fig.savefig(haohao)
-st.pyplot(box1)
+
+
+
+#     fig = plt.figure(figsize = (10,20))
+#     haohao = sns.barplot(x='counts',y='tags', data=fenxi)
+
+#     box1 = fig.savefig(haohao)
+#     st.pyplot(box1)
     
     
     
