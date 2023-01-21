@@ -59,8 +59,9 @@ if uploaded_file:
     from collections import Counter
 
     
-    for num in 명사카운트['세특1']:
-        여기 = ','.join(num)    
+   
+   여기 = [i for i in 명사카운트['세특1']]
+           
     
     
     nouns = mecab.nouns(여기)
