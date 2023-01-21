@@ -56,8 +56,8 @@ if uploaded_file:
     st.dataframe(df)
     
     
-    choice = df['모집단위'].unique()
-    choice_column = st.selectbox('선택해주세요',choice, )
+choice = df['모집단위'].unique()
+choice_column = st.selectbox('선택해주세요',choice, )
 
 
 명사카운트 = df[df['모집단위'] == choice_column]
