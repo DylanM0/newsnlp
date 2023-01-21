@@ -132,7 +132,7 @@ if uploaded_file:
 #     fig = px.bar(data =fenxi, x=counts, y=tags, color='Profit', template='plotly_white', title=f'<b>Sales & Profit by {choice_column}</b>')
 
     
-    fig = px.bar(fenxi, x='tags', y='counts',color='medal')
+    fig = px.bar(fenxi, x='tags', y='counts',color='lifeExp',height=400)
     st.plotly_chart(fig, use_container_width=True)
     
     
