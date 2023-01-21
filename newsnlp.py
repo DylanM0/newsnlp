@@ -58,7 +58,12 @@ if uploaded_file:
 
     from collections import Counter
 
-    nouns = mecab.nouns(명사카운트['명사'])
+    여기=[]
+    for num in 명사카운트['세특1']:
+        여기.append(num, end= ",")
+    
+    
+    nouns = mecab.nouns(여기)
     nouns = [n for n in nouns if len(n) > 1]
     count = Counter(nouns)
     top = count.most_common(20)
