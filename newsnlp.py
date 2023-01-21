@@ -86,13 +86,7 @@ if uploaded_file:
     plt.bar(x, values)
     plt.xticks(x, keys)
     
-    fig = px.bar(
-    x=keys,
-    y=values,
-    color='Profit',
-    template='plotly_white',
-    title=f'<b>Sales & Profit by {choice_column}</b>'
-    )
+    fig = px.bar(x=keys, y=values,color='Profit', template='plotly_white', title=f'<b>Sales & Profit by {choice_column}</b>')
     st.plotly_chart(fig)
     
     
