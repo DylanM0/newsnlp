@@ -76,18 +76,18 @@ if uploaded_file:
     nouns = [n for n in nouns if len(n) > 1]
     count = Counter(nouns)
     top = count.most_common(20)
-    st.table(top)
+    
     
     fenxi = pd.DataFrame(top)
     fenxi.columns =['tags', 'counts']
 
-
+    st.table(fenxi)
 
 
     plt.figure(figsize = (10,20))
     haohao = sns.barplot(x='counts',y='tags', data=fenxi)
 
-    plt.savefig("hao.png")
+#     plt.savefig("hao.png")
     st.pyplot(haohao)
     
     
