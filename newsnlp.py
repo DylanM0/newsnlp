@@ -66,7 +66,7 @@ if uploaded_file:
     
     df['명사'] = qwe
     
-    generate_excel_download_link(df)
+#     generate_excel_download_link(df)
     
     
     합격 = df[df['합격']=='합']
