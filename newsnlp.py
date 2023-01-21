@@ -136,14 +136,15 @@ if uploaded_file:
     
     wc = WordCloud(background_color="white",
                    width=1000, height=1000, 
-                   max_words=30, max_font_size=300).generate_from_frequencies(ddr)
+                   max_words=100, max_font_size=300).generate_from_frequencies(ddr)
 
     
 
     plt.figure(figsize = (17,17))
-    plt.imshow(wc)
+    plt.imshow(wc,interpolation='bilinear')
     plt.axis('off')
-    st.pyplot(wc)
+    plt.show()
+    st.pyplot()
     
     
     
