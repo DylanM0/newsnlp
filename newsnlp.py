@@ -60,7 +60,7 @@ if uploaded_file:
 
     
    
-   여기 = [i for i in 명사카운트['세특1']]
+    여기 = [i for i in 명사카운트['세특1']]
            
     
     
