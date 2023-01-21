@@ -69,13 +69,13 @@ if uploaded_file:
     df = pd.read_excel(uploaded_file, engine='openpyxl')
     st.dataframe(df)
     
-    qwe = []
-    for i in stqdm(df['세특1'].index):
-        nouns = mecab.nouns(df['세특1'][i])
-        nouns = [n for n in nouns if len(n) > 1]
-        qwe.append(nouns)
+#     qwe = []
+#     for i in stqdm(df['세특1'].index):
+#         nouns = mecab.nouns(df['세특1'][i])
+#         nouns = [n for n in nouns if len(n) > 1]
+#         qwe.append(nouns)
     
-    df['명사'] = qwe
+#     df['명사'] = qwe
     
 #     generate_excel_download_link(df)
     
@@ -96,29 +96,29 @@ if uploaded_file:
 
     from collections import Counter
     
-    키워드=[]
-    for i in 명사카운트['명사']:
-        tag_list = 명사카운트['명사'][i].split("', '")
-        for tag in tag_list:
-            키워드.append(tag)
+#     키워드=[]
+#     for i in 명사카운트['명사']:
+#         tag_list = 명사카운트['명사'][i].split("', '")
+#         for tag in tag_list:
+#             키워드.append(tag)
 
 
 
-#     여기 = [i for i in 명사카운트['세특1']]
+    여기 = [i for i in 명사카운트['세특1']]
 
-#     여기1 = listToString(여기)
-
-
-#     nouns = mecab.nouns(여기1)
-#     nouns = [n for n in nouns if len(n) > 1]
-#     count = Counter(nouns)
-#     top = count.most_common(20)
+    여기1 = listToString(여기)
 
 
-#     fenxi = pd.DataFrame(top)
-#     fenxi.columns =['tags', 'counts']
+    nouns = mecab.nouns(여기1)
+    nouns = [n for n in nouns if len(n) > 1]
+    count = Counter(nouns)
+    top = count.most_common(30)
 
-#     st.table(fenxi)
+
+    fenxi = pd.DataFrame(top)
+    fenxi.columns =['tags', 'counts']
+
+    st.table(fenxi)
 
 
 #     fig =  plt.figure(figsize = (10,10))
@@ -129,16 +129,8 @@ if uploaded_file:
     
     
     
-#     x = np.arange(len(top))
-#     keys = [x[0] for x in top] 
-#     values = [x[1] for x in top] 
-    
-#     plt.figure(figsize=(12,6))
-#     plt.bar(x, values)
-#     plt.xticks(x, keys)
-    
-#     fig = px.bar(x=keys, y=values,color='Profit', template='plotly_white', title=f'<b>Sales & Profit by {choice_column}</b>')
-#     st.plotly_chart(fig)
+    fig = px.bar(data =fenxi, x=counts, y=tags, color='Profit', template='plotly_white', title=f'<b>Sales & Profit by {choice_column}</b>')
+    st.plotly_chart(fig)
     
     
     
