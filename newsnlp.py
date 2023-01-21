@@ -6,6 +6,7 @@ import koreanize_matplotlib
 import seaborn as sns
 import numpy as np
 import pandas as pd
+from stqdm import stqdm
 
 
 
