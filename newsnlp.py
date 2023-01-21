@@ -49,31 +49,35 @@ if uploaded_file:
     st.dataframe(df)
     
     
-    
-    qwe = []
-    for i in stqdm(df['세특1'].index):
-        nouns = mecab.nouns(df['세특1'][i])
-        nouns = [n for n in nouns if len(n) > 1]
-        qwe.append(nouns)
-    
-    df['명사'] = qwe
-    
-    
-        
     choice = df['모집단위'].unique()
     choice_column = st.selectbox('선택해주세요',choice, )
 
 
-
     명사카운트 = df[df['모집단위'] == choice_column]
+    
+    
+    
+    qwe = []
+    for i in stqdm(명사카운트['세특1'].index):
+        nouns = mecab.nouns(명사카운트['세특1'][i])
+        nouns = [n for n in nouns if len(n) > 1]
+        qwe.append(nouns)
+    
+    명사카운트['명사'] = qwe
+    
+    
+        
+
 
 
     키워드 =[]
-    for i in 명사카운트['명사']:
+    for i in 명사카운트.index:
         tag_list = 명사카운트['명사'][i][2:-2].split("', '")
         for tag in tag_list:
             키워드.append(tag)
 
+            
+            
     from collections import Counter
     count1 = Counter(키워드)
 
