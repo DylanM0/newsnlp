@@ -134,12 +134,7 @@ if uploaded_file:
     ddr = dict(count.most_common(100))
     
     
-    wc = WordCloud(font_path=font,\
-        background_color="white", \
-        width=1000, \
-        height=1000, \
-        max_words=30, \
-        max_font_size=300).generate_from_frequencies(ddr)
+    wc = WordCloud(font_path=font_path, background_color="white",width=1000, height=1000, max_words=30, max_font_size=300).generate_from_frequencies(ddr)
 
     
 
