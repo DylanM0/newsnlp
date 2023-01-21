@@ -83,8 +83,8 @@ if uploaded_file:
     hao = plt.figure(figsize=(12,6))
     plt.bar(x, values)
     plt.xticks(x, keys)
-    hao.savgfig("hao.png")
-    st.pyplot(hao)
+    hao1 = plt.savgfig(hao)
+    st.pyplot(hao1)
     
     
     
