@@ -67,12 +67,13 @@ if uploaded_file:
     
     generate_excel_download_link(df)
     
+    global df
 
-df11 = dataframe(df)    
+ 
 
 
 
-choice = df11['모집단위'].unique()
+choice = df['모집단위'].unique()
     
     
 choice_column = st.selectbox('선택해주세요',choice, )
