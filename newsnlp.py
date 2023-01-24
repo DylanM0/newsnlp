@@ -136,12 +136,18 @@ if uploaded_file:
     st.set_option('deprecation.showPyplotGlobalUse', False)
     
     
+    def color_func(word, font_size, position,orientation,random_state=None, **kwargs):
+        return("hsl({:d},{:d}%, {:d}%)".format(np.random.randint(212,313),np.random.randint(26,32),np.random.randint(45,80)))
+    
+    
+    
+    
     font_path = 'fonts/Korail_Round_Gothic_Bold.ttf'
     
     
     wc = WordCloud(font_path = font_path, background_color="white",
                    width=1000, height=600, 
-                   max_words=80, max_font_size=300).generate_from_frequencies(ddr)
+                   max_words=80, max_font_size=300, color_func = color_func).generate_from_frequencies(ddr)
 
     
 
