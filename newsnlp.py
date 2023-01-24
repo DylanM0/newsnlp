@@ -137,7 +137,7 @@ if uploaded_file:
     
     
     def color_func(word, font_size, position,orientation,random_state=None, **kwargs):
-        return("hsl({:d},{:d}%, {:d}%)".format(np.random.randint(212,313),np.random.randint(26,32),np.random.randint(45,80)))
+        return("hsl({:d},{:d}%, {:d}%)".format(np.random.randint(201,325),np.random.randint(28,45),np.random.randint(35,80)))
     
     
     
