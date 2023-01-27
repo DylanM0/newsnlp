@@ -82,12 +82,7 @@ if uploaded_file:
     
     합격 = df[df['합격']=='합']
     
-    
-    
-    글자 = 합격.groupby(['모집단위','편제'])['글자수'].describe().astype(int).style.background_gradient(cmap='Blues')
-    st.table(글자)
-    
-    
+   
     choice = 합격['모집단위'].unique()
     choice1 = 합격['편제'].unique()
 
