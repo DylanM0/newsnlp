@@ -82,7 +82,7 @@ if uploaded_file:
     
     합격 = df[df['합격']=='합']
     
-    st.subheader('교과별 글자수분석')
+    
     
     글자 = 합격.groupby(['모집단위','편제'])['글자수'].describe().astype(int).style.background_gradient(cmap='Blues')
     st.table(글자)
@@ -97,6 +97,12 @@ if uploaded_file:
 
 
     명사카운트 = 합격[(합격['모집단위'] == choice_column)&(합격['편제'] == options)]
+    
+    명사카운트1 = 합격[합격['모집단위'] == choice_column]
+    
+    st.subheader('교과별 글자수분석')
+    글자 = 명사카운트1.groupby(['모집단위','편제'])['글자수'].describe().astype(int).style.background_gradient(cmap='Blues')
+    st.table(글자)
 
   
 
