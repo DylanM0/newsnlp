@@ -82,6 +82,11 @@ if uploaded_file:
     
     합격 = df[df['합격']=='합']
     
+    st.subheader('교과별 글자수분석')
+    
+    글자 = 합격.groupby(['모집단위','편제'])['글자수'].describe().astype(int).style.background_gradient(cmap='Blues')
+    st.table(글자)
+    
     
     choice = 합격['모집단위'].unique()
     choice1 = 합격['편제'].unique()
@@ -123,7 +128,8 @@ if uploaded_file:
 
     st.table(fenxi)
 
-
+    st.subheader(choice_column + ' ' + options + ' 명사 빈도수 분석')
+    
     fig =  plt.figure(figsize = (10,10))
 
     sns.barplot(x='counts',y='tags', data=fenxi)
@@ -143,6 +149,8 @@ if uploaded_file:
     
     
     font_path = 'fonts/Korail_Round_Gothic_Bold.ttf'
+    
+    st.subheader(choice_column + ' ' + options + ' 명사 WordCloud')
     
     
     wc = WordCloud(font_path = font_path, background_color="white",
